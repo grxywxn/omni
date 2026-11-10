@@ -1,4 +1,4 @@
-# Omni — Phase 1
+# Omni
 
 A lightweight all-in-one desktop app for Windows. Phase 1 contains:
 
@@ -14,7 +14,15 @@ A lightweight all-in-one desktop app for Windows. Phase 1 contains:
   - Online / Idle / Do Not Disturb / Invisible, with automatic Idle after a set time.
   - Live updates across everyone's apps.
 
-Music, Notes and Recorder show "coming soon" screens until their phases are built.
+**Music (Spotify)**:
+- Your full library: Liked Songs, playlists and saved albums.
+- Search, plus album and artist pages, and a queue.
+- Playlist management: create, rename, delete, add songs, remove songs, and drag to reorder.
+- Like and unlike songs, play on this PC or on any of your Spotify devices, Windows media keys, and a mini player in the sidebar.
+- "Listening to" shown on your profile.
+- Lots of layout options: tinting from album art, column choices, row size, player position and style, cover-art shape, and a resizable library.
+
+Notes and Recorder show "coming soon" screens until their phases are built.
 
 ---
 
@@ -50,6 +58,25 @@ npm run app        # run in development mode
 npm run package    # builds src-tauri\target\release\bundle\nsis\*-setup.exe
 ```
 
+## Music setup (once)
+
+Open **Music** in Omni and follow the 4 on-screen steps:
+
+1. Create an app at developer.spotify.com.
+2. Paste in the Redirect URI it shows you.
+3. Copy the app's Client ID into Omni.
+4. Click **Connect Spotify**.
+
+You need Spotify **Premium**.
+
+Spotify limits that apply to every app outside Spotify's own (not limits in Omni):
+- Up to **5 people** can use the Music section with your Client ID. Add them in the developer dashboard under **User Management**.
+- Songs can only be *listed* for playlists you own or collaborate on. Other playlists still play and shuffle normally.
+- Search shows 10 results per page. Scroll to load more.
+- Artist "Top tracks" and Spotify's Browse pages aren't available to apps any more.
+
+If the built-in player can't start on a PC, Omni shows a message. You can still pick your phone or another Spotify device from the **devices** button and control it from Omni.
+
 ## Keyboard shortcuts
 
 | Keys | Action |
@@ -59,6 +86,11 @@ npm run package    # builds src-tauri\target\release\bundle\nsis\*-setup.exe
 | `Ctrl ,` | Settings |
 | `Ctrl M` | Show / hide members panel |
 | `Esc` | Close dialogs |
+| `Space` | Music: play / pause |
+| `Ctrl F` | Music: search |
+| `Ctrl Shift → / ←` | Music: next / previous song |
+| `Alt ← / →` | Music: back / forward |
+| Media keys | Play / pause, next, previous (also from the Windows volume overlay) |
 
 ## Why it's light on RAM
 

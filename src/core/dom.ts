@@ -198,3 +198,28 @@ export function timeAgo(iso: string): string {
   const d = new Date(iso);
   return d.toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' });
 }
+
+/** In-app yes/no dialog (native confirm() is unreliable inside the desktop webview). */
+export function confirmDialog(title: string, message: string, opts: { confirmLabel?: string; danger?: boolean } = {}): Promise<boolean> {
+  return new Promise((resolve) => {
+    let answered = false;
+    const finish = (v: boolean) => {
+      if (answered) return;
+      answered = true;
+      close();
+      resolve(v);
+    };
+    const body = h(
+      'div',
+      { class: 'stack' },
+      h('p', null, message),
+      h(
+        'div',
+        { class: 'row end' },
+        h('button', { class: 'ghost', onclick: () => finish(false) }, 'Cancel'),
+        h('button', { class: `primary ${opts.danger ? 'danger-btn' : ''}`, onclick: () => finish(true) }, opts.confirmLabel ?? 'OK'),
+      ),
+    );
+    const close = modal(title, body, { width: 420, onClose: () => { if (!answered) { answered = true; resolve(false); } } });
+  });
+}

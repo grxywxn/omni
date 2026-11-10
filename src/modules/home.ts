@@ -9,9 +9,9 @@ import { navigate, openProfile } from '../ui/shell';
 import type { ModuleId } from '../core/settings';
 
 const TILES: Array<{ id: ModuleId; icon: string; title: string; text: string; phase?: string }> = [
-  { id: 'recorder', icon: 'mic', title: 'Recorder', text: 'Multi-track voice recording with presets & AI noise removal.', phase: 'Phase 2' },
-  { id: 'notes', icon: 'notes', title: 'Notes', text: 'Markdown vault with Notion, Word, Scrivener & Campfire tools.', phase: 'Phase 3' },
-  { id: 'music', icon: 'music', title: 'Music', text: 'Your Spotify library in a lighter, fully themeable player.', phase: 'Phase 4' },
+  { id: 'music', icon: 'music', title: 'Music', text: 'Your Spotify library in a lighter, fully themeable player.' },
+  { id: 'recorder', icon: 'mic', title: 'Recorder', text: 'Multi-track voice recording with presets & AI noise removal.', phase: 'Coming next' },
+  { id: 'notes', icon: 'notes', title: 'Notes', text: 'Markdown vault with Notion, Word, Scrivener & Campfire tools.', phase: 'Coming soon' },
 ];
 
 function greeting(): string {

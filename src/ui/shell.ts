@@ -67,7 +67,7 @@ export function renderShell(root: HTMLElement): () => void {
   const userPanel = h('div', { class: 'user-panel' });
   const settingsBtn = h('button', { class: 'nav-item', title: 'Settings', onclick: () => navigate('settings') }, icon('settings', 20), h('span', { class: 'nav-label' }, 'Settings'));
   navButtons.set('settings', settingsBtn);
-  sidebar.append(navTop, h('div', { class: 'nav-spacer' }), settingsBtn, userPanel);
+  sidebar.append(navTop, h('div', { class: 'nav-spacer' }), h('div', { class: 'mini-player-slot' }), settingsBtn, userPanel);
 
   const renderUserPanel = () => {
     const p = me.get();
@@ -102,6 +102,7 @@ export function renderShell(root: HTMLElement): () => void {
 
   const show = async (id: ModuleId) => {
     for (const [mid, b] of navButtons) b.classList.toggle('active', mid === id);
+    document.body.dataset.module = id;
     if (id === current) return;
     const prev = current;
     current = id;

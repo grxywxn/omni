@@ -1,4 +1,4 @@
-import { h, icon, field, toast, toggle, select } from '../core/dom';
+import { h, icon, field, toast, toggle, select, confirmDialog } from '../core/dom';
 import { Disposer } from '../core/store';
 import { settings, patchSettings, type ModuleId } from '../core/settings';
 import { session, signOut, changePassword, changeEmail } from '../lib/auth';
@@ -240,18 +240,18 @@ function aboutTab(): HTMLElement {
   return h(
     'div',
     { class: 'stack-lg narrow' },
-    h('section', { class: 'card stack' }, h('div', { class: 'auth-logo' }, h('span', { class: 'logo-mark' }), h('span', null, 'Omni 0.1.0')), h('p', null, 'Phase 1 — shell, themes, accounts and profiles.')),
+    h('section', { class: 'card stack' }, h('div', { class: 'auth-logo' }, h('span', { class: 'logo-mark' }), h('span', null, 'Omni 0.2.0')), h('p', null, 'Shell, themes, accounts, profiles and Music.')),
     h(
       'section',
       { class: 'card stack' },
       h('h3', null, 'Roadmap'),
-      h('ol', { class: 'steps' }, h('li', null, '✅ Shell, themes, accounts & profiles'), h('li', null, 'Recorder'), h('li', null, 'Notes'), h('li', null, 'Music (Spotify)')),
+      h('ol', { class: 'steps' }, h('li', null, '✅ Shell, themes, accounts & profiles'), h('li', null, '✅ Music (Spotify)'), h('li', null, 'Recorder'), h('li', null, 'Notes')),
     ),
     h('section', { class: 'card stack' },
       h('h3', null, 'Server'),
       h('p', { class: 'muted' }, `Connected to ${getConfig()?.url ?? '—'}`),
       h('div', null, h('button', { class: 'secondary', onclick: async () => {
-        if (!confirm('Disconnect this PC from your Omni server? You can reconnect with a connection code.')) return;
+        if (!(await confirmDialog('Disconnect from server', 'Disconnect this PC from your Omni server? You can reconnect with a connection code.', { confirmLabel: 'Disconnect', danger: true }))) return;
         await signOut().catch(() => {});
         clearConfig();
         location.reload();
