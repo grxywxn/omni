@@ -262,7 +262,8 @@ pub fn trim(dir: &Path, start: f64, end: f64) -> Result<(), String> {
     let mut take = load(dir)?;
     snapshot(dir, &take)?;
     let (s, e) = (start.min(end), start.max(end));
-    apply_cuts(dir, &mut take, &[(0.0, s), (e, take.seconds + 1.0)])
+    let tail_end = take.seconds + 1.0;
+    apply_cuts(dir, &mut take, &[(0.0, s), (e, tail_end)])
 }
 
 /// Shorten long pauses. Detection uses `reference_id`'s processed (or raw) audio.
