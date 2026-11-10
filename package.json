@@ -1,7 +1,7 @@
 {
   "name": "omni",
   "private": true,
-  "version": "0.2.0",
+  "version": "0.3.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -15,7 +15,8 @@
   "dependencies": {
     "@supabase/supabase-js": "^2.49.0",
     "@tauri-apps/api": "^2.5.0",
-    "@tauri-apps/plugin-opener": "^2.2.0"
+    "@tauri-apps/plugin-opener": "^2.2.0",
+    "@tauri-apps/plugin-dialog": "^2.2.0"
   },
   "devDependencies": {
     "@tauri-apps/cli": "^2.5.0",

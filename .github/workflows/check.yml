@@ -1,0 +1,22 @@
+# Fast compile check of the native code on Windows for work-in-progress branches (no release).
+name: Check (Windows)
+
+on:
+  push:
+    branches-ignore: [main]
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+      - uses: swatinem/rust-cache@v2
+        with:
+          workspaces: './src-tauri -> target'
+      - name: Placeholder frontend
+        shell: bash
+        run: mkdir -p dist && echo '<!doctype html>' > dist/index.html
+      - name: cargo check
+        run: cargo check --manifest-path src-tauri/Cargo.toml --color never

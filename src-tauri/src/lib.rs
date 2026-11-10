@@ -1,4 +1,5 @@
 // Native side of Omni.
+// Phase 2 (audio/) adds the Recorder: capture, processing, editing and export.
 // Phase 4 adds a tiny local web listener used once during "Sign in with Spotify":
 // Spotify redirects the browser to http://127.0.0.1:43821/callback?code=…,
 // we catch that single request, show a "you can close this tab" page, and hand
@@ -10,6 +11,8 @@ use std::sync::atomic::{AtomicBool, Ordering};
 use std::time::{Duration, Instant};
 
 use tauri::Manager;
+
+mod audio;
 
 static CANCEL_OAUTH: AtomicBool = AtomicBool::new(false);
 
@@ -86,7 +89,27 @@ fn cancel_oauth() {
 pub fn run() {
     tauri::Builder::default()
         .plugin(tauri_plugin_opener::init())
-        .invoke_handler(tauri::generate_handler![wait_for_oauth, cancel_oauth])
+        .plugin(tauri_plugin_dialog::init())
+        .invoke_handler(tauri::generate_handler![
+            wait_for_oauth,
+            cancel_oauth,
+            audio::rec_devices,
+            audio::rec_start,
+            audio::rec_pause,
+            audio::rec_status,
+            audio::rec_stop,
+            audio::takes_list,
+            audio::take_open,
+            audio::take_process,
+            audio::take_progress,
+            audio::take_peaks,
+            audio::take_cut,
+            audio::take_trim,
+            audio::take_remove_silence,
+            audio::take_undo,
+            audio::take_export,
+            audio::take_rename
+        ])
         .run(tauri::generate_context!())
         .expect("error while running Omni");
 }
