@@ -1,6 +1,6 @@
 [package]
 name = "omni"
-version = "0.3.0"
+version = "0.4.0"
 description = "Omni — a lightweight all-in-one app"
 edition = "2021"
 

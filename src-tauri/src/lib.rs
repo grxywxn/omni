@@ -13,6 +13,7 @@ use std::time::{Duration, Instant};
 use tauri::Manager;
 
 mod audio;
+mod notes;
 
 static CANCEL_OAUTH: AtomicBool = AtomicBool::new(false);
 
@@ -108,7 +109,19 @@ pub fn run() {
             audio::take_remove_silence,
             audio::take_undo,
             audio::take_export,
-            audio::take_rename
+            audio::take_rename,
+            notes::vault_scan,
+            notes::vault_read_all,
+            notes::note_read,
+            notes::note_read_opt,
+            notes::note_write,
+            notes::note_mtime,
+            notes::dir_create,
+            notes::path_move,
+            notes::path_trash,
+            notes::file_write_base64,
+            notes::export_write,
+            notes::dir_list
         ])
         .run(tauri::generate_context!())
         .expect("error while running Omni");
