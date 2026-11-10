@@ -4,7 +4,7 @@ export function mount(el: HTMLElement): void {
   comingSoon(el, {
     icon: 'notes',
     title: 'Notes',
-    phase: 'Phase 3',
+    phase: 'the next update',
     points: [
       'Plain Markdown files in a folder you pick — works side by side with Obsidian',
       'Obsidian: [[links]], backlinks, graph view, tags, daily notes',

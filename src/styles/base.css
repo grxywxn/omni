@@ -124,7 +124,7 @@ input[type='range'] { accent-color: var(--accent); width: 100%; }
   font-size: .92em;
 }
 .range-row { display: flex; align-items: center; gap: 10px; }
-.range-value { min-width: 44px; text-align: right; color: var(--text-muted); font-variant-numeric: tabular-nums; }
+.range-value { min-width: 64px; white-space: nowrap; text-align: right; color: var(--text-muted); font-variant-numeric: tabular-nums; }
 
 .switch { display: inline-flex; align-items: center; gap: 10px; cursor: pointer; }
 .switch input { position: absolute; opacity: 0; pointer-events: none; }

@@ -22,7 +22,25 @@ A lightweight all-in-one desktop app for Windows. Phase 1 contains:
 - "Listening to" shown on your profile.
 - Lots of layout options: tinting from album art, column choices, row size, player position and style, cover-art shape, and a resizable library.
 
-Notes and Recorder show "coming soon" screens until their phases are built.
+**Recorder** (for YouTube voiceovers):
+- Record several microphones plus **system audio** (whatever your PC is playing), each on its own track and kept perfectly in sync.
+- Live level meters with a clip warning, and a sound check that saves nothing.
+- Pause and resume while recording. Recording carries on while you use other parts of Omni (a red **REC** badge shows in the sidebar).
+- **Clean-up**, every stage on/off and adjustable:
+  - AI noise removal (RNNoise)
+  - Rumble filter and noise gate
+  - 4-band tone EQ
+  - De-esser and compressor
+  - Loudness normalisation (YouTube −14 LUFS, never clips)
+- Presets: YouTube voice, Warm podcast, Bright & crisp, Noisy room rescue, Natural, and Raw. You can save your own.
+- **Editor:**
+  - Waveforms and zoom.
+  - Select and **cut**, **trim**, **remove silences** (with a preview of how much time it saves), and **undo**.
+  - A/B between the original and cleaned-up versions.
+- **Export** to WAV (16/24/32-bit) or **FLAC**, as separate tracks and/or one mix, to any folder.
+- Originals are always kept in each take's `raw` folder, so clean-up can be redone with different settings at any time.
+
+Notes shows a "coming soon" screen until it's built.
 
 ---
 
@@ -86,6 +104,9 @@ If the built-in player can't start on a PC, Omni shows a message. You can still 
 | `Ctrl ,` | Settings |
 | `Ctrl M` | Show / hide members panel |
 | `Esc` | Close dialogs |
+| `Ctrl Shift R` | Recorder: start / stop recording |
+| `Ctrl Shift P` | Recorder: pause / resume |
+| `Space`, `Del`, `Ctrl Z`, `+`/`−` | Editor: play, cut selection, undo, zoom |
 | `Space` | Music: play / pause |
 | `Ctrl F` | Music: search |
 | `Ctrl Shift → / ←` | Music: next / previous song |
