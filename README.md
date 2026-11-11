@@ -40,7 +40,27 @@ A lightweight all-in-one desktop app for Windows. Phase 1 contains:
 - **Export** to WAV (16/24/32-bit) or **FLAC**, as separate tracks and/or one mix, to any folder.
 - Originals are always kept in each take's `raw` folder, so clean-up can be redone with different settings at any time.
 
-Notes shows a "coming soon" screen until it's built.
+**Notes** (Obsidian, Notion, Word, Scrivener and Campfire in one):
+- **Your files, your folder.** Plain Markdown in a folder you choose, so an existing **Obsidian vault** works as-is. Omni keeps its own extras in a hidden `.omni` folder.
+- **Editing:** live preview (click a paragraph to edit it), plus Source and Reading modes.
+  - The `/` menu inserts headings, to-dos, callouts, toggles, tables, code, maths, dividers and embeds.
+  - Drag paragraphs by their ⋮⋮ handle to reorder them.
+  - Paste or drag in images.
+- **Obsidian features:**
+  - `[[links]]` with autocomplete, and links that update when you rename a note.
+  - Backlinks, outline, `#tags`, properties, `![[embeds]]`, callouts and KaTeX maths.
+  - Search, a quick switcher (`Ctrl O`), daily notes, bookmarks and a **graph view**.
+- **Notion features:** open any folder as a **database**: an editable table, a Kanban **board** (drag cards between columns) or a **gallery**.
+- **Word features:**
+  - A formatting toolbar with bold, italic, underline, strikethrough, highlight, text colour, lists and styles.
+  - **Comments** with replies and resolve.
+  - **Page view**, export to **.docx** and **PDF**.
+- **Scrivener features:**
+  - Binder ordering (drag in the file tree) and a **corkboard** of index cards with synopses and status labels.
+  - **Split view**, word targets per note and per session, **snapshots** you can compare and restore, **Compile** to Word/PDF/Markdown, and **focus mode**.
+- **Campfire features:**
+  - Templates for characters, locations, items, events, scenes and maps.
+  - A **timeline** view, a **relationship web** (graph mode), and **maps** where you click to drop pins that link to notes.
 
 ---
 
@@ -104,6 +124,14 @@ If the built-in player can't start on a PC, Omni shows a message. You can still 
 | `Ctrl ,` | Settings |
 | `Ctrl M` | Show / hide members panel |
 | `Esc` | Close dialogs |
+| `Ctrl N` / `Ctrl Shift N` | Notes: new note / new from template |
+| `Ctrl O` | Notes: open any note |
+| `Ctrl Shift F` | Notes: search |
+| `Ctrl Shift D` | Notes: today's daily note |
+| `Ctrl G` | Notes: graph view |
+| `Ctrl \` | Notes: split view |
+| `Ctrl E` | Notes: edit ↔ read |
+| `Ctrl Shift Enter` | Notes: focus mode |
 | `Ctrl Shift R` | Recorder: start / stop recording |
 | `Ctrl Shift P` | Recorder: pause / resume |
 | `Space`, `Del`, `Ctrl Z`, `+`/`−` | Editor: play, cut selection, undo, zoom |

@@ -11,7 +11,7 @@ import type { ModuleId } from '../core/settings';
 const TILES: Array<{ id: ModuleId; icon: string; title: string; text: string; phase?: string }> = [
   { id: 'music', icon: 'music', title: 'Music', text: 'Your Spotify library in a lighter, fully themeable player.' },
   { id: 'recorder', icon: 'mic', title: 'Recorder', text: 'Multi-track voice recording with presets & AI noise removal.' },
-  { id: 'notes', icon: 'notes', title: 'Notes', text: 'Markdown vault with Notion, Word, Scrivener & Campfire tools.', phase: 'Coming next' },
+  { id: 'notes', icon: 'notes', title: 'Notes', text: 'Markdown vault with Notion, Word, Scrivener & Campfire tools.' },
 ];
 
 function greeting(): string {

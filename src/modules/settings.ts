@@ -240,12 +240,12 @@ function aboutTab(): HTMLElement {
   return h(
     'div',
     { class: 'stack-lg narrow' },
-    h('section', { class: 'card stack' }, h('div', { class: 'auth-logo' }, h('span', { class: 'logo-mark' }), h('span', null, 'Omni 0.3.0')), h('p', null, 'Shell, themes, accounts, profiles, Music and Recorder.')),
+    h('section', { class: 'card stack' }, h('div', { class: 'auth-logo' }, h('span', { class: 'logo-mark' }), h('span', null, 'Omni 0.4.0')), h('p', null, 'Music, Notes, Recorder, profiles and themes — all four parts complete.')),
     h(
       'section',
       { class: 'card stack' },
       h('h3', null, 'Roadmap'),
-      h('ol', { class: 'steps' }, h('li', null, '✅ Shell, themes, accounts & profiles'), h('li', null, '✅ Music (Spotify)'), h('li', null, '✅ Recorder'), h('li', null, 'Notes')),
+      h('ol', { class: 'steps' }, h('li', null, '✅ Shell, themes, accounts & profiles'), h('li', null, '✅ Music (Spotify)'), h('li', null, '✅ Recorder'), h('li', null, '✅ Notes')),
     ),
     h('section', { class: 'card stack' },
       h('h3', null, 'Server'),
